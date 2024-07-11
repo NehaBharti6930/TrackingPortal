@@ -148,7 +148,7 @@ export default function KilamForm() {
                             htmlFor="Others"
                             className="font-medium text-gray-900"
                           >
-                            Others
+                            Other
                           </label>
 
                           <p className="mt - 1">
