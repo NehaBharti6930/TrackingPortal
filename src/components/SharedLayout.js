@@ -383,35 +383,38 @@ export default function SharedLayout(props) {
               </div>
             </div>
           </div>
-      {/* BREADCRUM */}    
+          {/* BREADCRUM */}
           <main className="py - 10">
             <div className="h-10 my-4 space-x-2 flex overflow-hidden bg-slate-800 w-ful rounded-md mx-5 p-2 text-white font-semibold">
-            
-            {/* Home icon in breadcrum */}
+              {/* Home icon in breadcrum */}
 
-               <svg 
-                 aria-hidden="true" 
-                 class="svg-icon iconHome bg-white"
-                 width="18" height="18">
-                 <path d="M15 10v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5H0l9-9 9 9h-3Zm-8 1v6h4v-6H7Z"></path>
+              <svg
+                aria-hidden="true"
+                class="svg-icon iconHome bg-white"
+                width="18"
+                height="18"
+              >
+                <path d="M15 10v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5H0l9-9 9 9h-3Zm-8 1v6h4v-6H7Z"></path>
               </svg>
-               
+
               <span>Home</span>
               {/* next arrow icon */}
-              {<svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                />
-              </svg> }
+              {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              }
 
               <span>Menu</span>
             </div>
