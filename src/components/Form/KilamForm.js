@@ -185,7 +185,7 @@ export default function KilamForm() {
     <form
       onSubmit={formik.handleSubmit}
       onReset={formik.handleReset}
-      className="p-4 bg-orange-200 m-2 rounded-md"
+      className="p-4 bg-orange-20 bg-gradient-to-r from-[#f9b168] to-orange-200  m-2 rounded-md"
     >
       <div className="borde border-gray-400 border-2 rounded-lg p-2">
         <div className="flex h-16 shrink-0 items-center justify-between font-extrabold ">
@@ -336,6 +336,29 @@ export default function KilamForm() {
               <div className="mt-2 sm:col-span-2 sm:mt-0">
                 <div className="mt-4 sm:coExistingl-span-2 sm:mt-0">
                   <div className="max-w-lg space-y-6">
+                    {/* {getdata.map((item) => (
+                      <input
+                        type="radio"
+                        value={item.changetypename}
+                        name={item.changetypename}
+                      />
+                     
+                    ))} */}
+
+                    {getdata.map((option) => (
+                      <div key={option.value}>
+                        <input
+                          type="radio"
+                          id={option.changetypeid}
+                          name="dynamicRadio"
+                          value={option.changetypeid}
+                        />
+                        <label htmlFor={option.value}>
+                          {option.changetypename}
+                        </label>
+                      </div>
+                    ))}
+
                     <div
                       className="sm:inline-flex sm:flex-cols-1 items-center align-middle
                       justify-between w-full"
@@ -1198,9 +1221,6 @@ export default function KilamForm() {
           </div>
         )}
       </div>
-      {getdata.map((item) => (
-        <li>{item.changetypename}</li>
-      ))}
     </form>
   );
 }
