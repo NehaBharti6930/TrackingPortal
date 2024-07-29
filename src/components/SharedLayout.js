@@ -31,7 +31,8 @@ const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
   { name: "Menu", href: "#", icon: UsersIcon, current: false },
   { name: "Profile", href: "#", icon: UsersIcon, current: false },
-  { name: "RFC Forms", href: "#", icon: FolderIcon, current: false },
+  { name: "RFC Form", href: "/rfc-form", icon: FolderIcon, current: false },
+  { name: "Approved Form", href: "/test", icon: FolderIcon, current: false },
   { name: "Reports", href: "#", icon: DocumentDuplicateIcon, current: false },
   {
     name: "Master Data",
