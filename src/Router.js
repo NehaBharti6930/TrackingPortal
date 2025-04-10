@@ -10,9 +10,9 @@ const Router = () => {
     <BrowserRouter>
       <SharedLayout>
         <Routes>
-          <Route path="/rfc-form" element={<KilamForm />} />
+          <Route path="/" element={<KilamForm />} />
           <Route path="/test" element={<Test />} />
-          {/* <Route path="/" element={<Dashboard />} /> */}
+          {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
         </Routes>
       </SharedLayout>
     </BrowserRouter>

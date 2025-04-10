@@ -29,10 +29,10 @@ import ioclImg from "../assets/images/iocl.png";
 import ioclLogoLight from "../assets/images/logo-light.png";
 
 const navigation = [
-  { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
+  // { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
   { name: "Menu", href: "#", icon: UsersIcon, current: false },
   { name: "Profile", href: "#", icon: UsersIcon, current: false },
-  { name: "RFC Form", href: "/rfc-form", icon: FolderIcon, current: false },
+  { name: "RFC Form", href: "/", icon: FolderIcon, current: false },
   { name: "Approved Form", href: "/test", icon: FolderIcon, current: false },
   { name: "Reports", href: "#", icon: DocumentDuplicateIcon, current: false },
   {
