@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import ioclImg from "../../assets/images/iocl.png";
 import { FormHelperText } from "@mui/material";
+import { Description } from "@headlessui/react";
 
 export default function KilamForm() {
   const [valNew, setNew] = useState(false);
@@ -19,6 +20,7 @@ export default function KilamForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [valueNew, setValueNew] = useState(false);
   const [valueNew2, setValueNew2] = useState(false);
+  const [designation, setDesignation] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -181,6 +183,23 @@ export default function KilamForm() {
     };
     fetchdata();
   }, []);
+
+  const insertRFCDescription = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5021/api/Operation/InsertRFCDescription",
+        {
+          requiremenT_DESC_BACKGROUND: { Description },
+          persoN_RESPONSIBLE_NAME: { userName },
+          persoN_RESPONSIBLE_DESIGNATION: { designation },
+        }
+      );
+      const result = await response.json();
+      setdata(result);
+      console.log("data", result);
+    } catch (error) {}
+  };
+
   return (
     <form
       onSubmit={formik.handleSubmit}
@@ -259,7 +278,8 @@ export default function KilamForm() {
                   <textarea
                     rows={2}
                     cols={30}
-                    //value={this.state.textareaValue}
+                    value={Description}
+                    onChange={(e) => setDesignation(e.target.value)}
                     //onChange={(event) => this.handleOnChange(event)}
                     className=" w-full p-2 rounded-md drop-shadow-md"
                     placeholder="Please Enter..."
@@ -345,20 +365,6 @@ export default function KilamForm() {
                      
                     ))} */}
 
-                    {getdata.map((option) => (
-                      <div key={option.value}>
-                        <input
-                          type="radio"
-                          id={option.changetypeid}
-                          name="dynamicRadio"
-                          value={option.changetypeid}
-                        />
-                        <label htmlFor={option.value}>
-                          {option.changetypename}
-                        </label>
-                      </div>
-                    ))}
-
                     <div
                       className="sm:inline-flex sm:flex-cols-1 items-center align-middle
                       justify-between w-full"
@@ -378,6 +384,20 @@ export default function KilamForm() {
                         >
                           New
                         </label>
+                        {/* {getdata.map((option) => (
+                          <div className="flex space-x-3 mt-32" key={option.value}>
+                            <input
+                              type="radio"
+                              id={option.changetypeid}
+                              name="dynamicRadio"
+                              value={option.changetypeid}
+                              className="flex pt-"
+                            />
+                            <label htmlFor={option.changetypeid}>
+                              {option.changetypename}
+                            </label>
+                          </div>
+                        ))} */}
                       </div>
 
                       <div className="relative w-full flex gap-x-3 items-center">
@@ -634,17 +654,18 @@ export default function KilamForm() {
               </div>
 
               <div className="mt-2 sm:col-span-2 sm:mt-0 w-full gap-4">
-                <input
+                {/* <input
                   type="text"
                   placeholder={userName}
                   value={userName}
+                  onChange={(e) => setName(e.target.value)}
                   // name={inputVal?.name}
                   id="txtUserName"
                   autocomplete="name"
                   className="block w-full  rounded-md border-0 p-1.5 text-gray-900 
                 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                />
+                /> */}
               </div>
 
               <div className="mt-2 sm:col-span-2 sm:mt-0 w-full gap-4">
@@ -661,17 +682,18 @@ export default function KilamForm() {
               </div>
 
               <div className="mt-2 sm:col-span-2 sm:mt-0 w-full gap-4">
-                <input
+                {/* <input
                   type="text"
                   placeholder={userDegination}
                   value={userDegination}
                   // name={inputVal?.name}
                   id="txtUserDeginstion"
+                  onChange={(e) => setName(e.target.value)}
                   autocomplete="name"
                   className="block w-full rounded-md border-0 p-1.5 text-gray-900 
                 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
                 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                />
+                /> */}
               </div>
             </div>
 
@@ -844,6 +866,7 @@ export default function KilamForm() {
             Submit
           </button>
         </div>
+
         {valueNew && (
           <div className="sm:space-y-8">
             <div className="borde border-gray-400 border-2 rounded-lg p-2">
